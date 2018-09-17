@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' 
+	content='width=device-width,initial-scale=1'>
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+<section class='w3-container'>
+<h3>방송 프로그램 리스트</h3>
+<table class='w3-table w3-margin w3-border'>
+	<tr class='w3-border'>
+		<th>방송국</th><th>장르</th><th>프로그램명</th>
+	</tr>
+	<% list.forEach(function(item) { %>
+	<tr class='w3-border'>
+		<td><%- item.bsc %></td>
+		<td><%- item.genre %></td>
+		<td><a href='/update/<%- item.no %>'><%- item.title %></td></a>
+	</tr>
+	<% }) %>
+</table>
+<article>
+	<button class='w3-button w3-green'><a href='/input'>추가</a></button>
+</article>
+</section>
+</body>
+</html>

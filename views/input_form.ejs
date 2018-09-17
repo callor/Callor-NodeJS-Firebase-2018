@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' 
+	content='width=device-width,initial-scale=1'>
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<section class='w3-container'>
+	<article class='w3-margin'>
+	<!-- database에 저장할 데이터를 입력하는 form -->
+	<form action='/input' method='POST'>
+	
+		<input type='hidden' name='no' value='<%- item.no %>'>
+		<label>방송국</label>
+		<input value='<%- item.bsc %>' class='w3-input w3-border' type='text' name='bsc' id='bsc'>
+		
+		<label>장르</label>
+		<input value='<%- item.genre %>' class='w3-input w3-border' type='text' name='genre' id='genre'>
+		
+		<label>프로그램</label>
+		<input value='<%- item.title %>' class='w3-input w3-border' type='text' name='title' id='title'>
+		<label>내용</label>
+		<textarea class='w3-input w3-border' rows="5" name='memo' id='memo'><%- item.memo %></textarea>
+		<button id='btnSave' class='w3-button w3-blue'>저장</button>
+		<button id='btnDelete' type='button' class='w3-button w3-red'><a href='/delete/<%- item.no %>'>삭제</a></button> 	
+	</form>
+	</article>
+</section>	
+</body>
+</html>
